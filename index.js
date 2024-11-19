@@ -126,6 +126,27 @@ app.get('/allAdhanTimeCitiesDay1', async (req, res) => {
     }
 });
 
+app.get('/allAdhanTimeCitiesDay1/:city', async (req, res) => {
+    const { city } = req.params;
+    try {
+        const normalizedInputCity = normalizeCityName(city);
+        const allAdhanTimes = await fetchAdhanTimes1();
+
+        const cityData = allAdhanTimes.find(
+            item => normalizeCityName(item.city) === normalizedInputCity
+        );
+
+        if (cityData) {
+            res.json(cityData.data); 
+        } else {
+            res.status(404).send({ error: 'Şehir bulunamadı.' });
+        }
+    } catch (error) {
+        console.error('Şehir ezan vakitleri alınamadı:', error);
+        res.status(500).send('Şehir ezan vakitleri alınamadı.');
+    }
+});
+
 app.get('/allAdhanTimeCitiesDay7', async (req, res) => {
     try {
         const allAdhanTimes = await fetchAdhanTimes7();
@@ -134,6 +155,27 @@ app.get('/allAdhanTimeCitiesDay7', async (req, res) => {
     } catch (error) {
         console.error('Ezan vakitleri alınamadı:', error);
         res.status(500).send('Ezan vakitleri alınamadı.');
+    }
+});
+
+app.get('/allAdhanTimeCitiesDay7/:city', async (req, res) => {
+    const { city } = req.params;
+    try {
+        const normalizedInputCity = normalizeCityName(city);
+        const allAdhanTimes = await fetchAdhanTimes7();
+
+        const cityData = allAdhanTimes.find(
+            item => normalizeCityName(item.city) === normalizedInputCity
+        );
+
+        if (cityData) {
+            res.json(cityData.data);
+        } else {
+            res.status(404).send({ error: 'Şehir bulunamadı.' });
+        }
+    } catch (error) {
+        console.error('Şehir ezan vakitleri alınamadı:', error);
+        res.status(500).send('Şehir ezan vakitleri alınamadı.');
     }
 });
 
