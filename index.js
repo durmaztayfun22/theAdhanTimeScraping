@@ -11,6 +11,7 @@ app.use(cors());
 const getCitiesData = async () => {
     try {
         const res = await axios.get('https://www.takvim.com.tr/get/getcities');
+	//yeni yorum satırı eklendi -furkan
         const cities = res.data;
         return cities;  
     } catch (error) {
