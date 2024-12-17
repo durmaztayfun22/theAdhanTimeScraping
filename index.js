@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 const cors = require('cors');
 const { cities } = require('./citiesAndDistrict');
 const app = express();
-const PORT = 3030;
+const PORT = 3000;
 //aferin cors kullanilmis
 app.use(cors());
 

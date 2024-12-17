@@ -1,4 +1,4 @@
-export const cities = [
+const cities = [
   { label: 'Adana', value: 'Adana' },
   { label: 'Adıyaman', value: 'Adıyaman' },
   { label: 'Afyonkarahisar', value: 'Afyonkarahisar' },
@@ -82,7 +82,7 @@ export const cities = [
   { label: 'Zonguldak', value: 'Zonguldak' }
 ];
   
-  export const districts = {
+ const districts = {
   'Adana': ['Seyhan', 'Yüreğir', 'Çukurova', 'Sarıçam', 'Aladağ', 'Ceyhan', 'Feke', 'İmamoğlu', 'Karaisalı', 'Karataş', 'Kozan', 'Pozantı', 'Saimbeyli', 'Tufanbeyli', 'Yumurtalık'],
   'Adıyaman': ['Merkez', 'Besni', 'Çelikhan', 'Gerger', 'Gölbaşı', 'Kahta', 'Samsat', 'Sincik', 'Tut'],
   'Afyonkarahisar': ['Merkez', 'Başmakçı', 'Bayat', 'Bolvadin', 'Çay', 'Çobanlar', 'Dazkırı', 'Dinar', 'Emirdağ', 'Evciler', 'Hocalar', 'İhsaniye', 'İscehisar', 'Kızılören', 'Sandıklı', 'Sinanpaşa', 'Sultandağı', 'Şuhut'],
@@ -165,3 +165,5 @@ export const cities = [
   'Yozgat': ['Akdağmadeni', 'Aydıncık', 'Boğazlıyan', 'Çayıralan', 'Çekerek', 'Kadışehri', 'Saraykent', 'Sorgun', 'Şefaatli', 'Yozgat Merkez'],
   'Zonguldak': ['Alaplı', 'Çaycuma', 'Devrek', 'Ereğli', 'Gökçebey', 'Kilimli', 'Merkez', 'Zonguldak']
   };
+
+  module.exports = { cities, districts }
