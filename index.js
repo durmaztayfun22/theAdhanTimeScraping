@@ -5,12 +5,13 @@ const cors = require('cors');
 const { cities } = require('./citiesAndDistrict');
 const app = express();
 const PORT = 3030;
-
+//aferin cors kullanilmis
 app.use(cors());
 
 const getCitiesData = async () => {
     try {
         const res = await axios.get('https://www.takvim.com.tr/get/getcities');
+	//yeni yorum satırı eklendi -furkan
         const cities = res.data;
         return cities;  
     } catch (error) {
@@ -27,7 +28,7 @@ const AdhanCanakkale = async () => {
         console.error('HATA:', error.message);
     }
 };
-
+//normalize turkish char bunun daha kolayi vardı saankiii😝
 const normalizeCityName = (cityName) => {
     const turkishChars = {
         'Ç': 'C', 'Ğ': 'G', 'İ': 'I', 'Ö': 'O', 'Ş': 'S', 'Ü': 'U',
