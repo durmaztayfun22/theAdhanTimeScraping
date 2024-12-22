@@ -1,5 +1,5 @@
 ﻿## **TheAdhanTimeScraping** 🚀
-Bu proje bazı akaryakıt istasyonlarının verileri JavaScript projesidir.
+Bu proje bazı ezan saatlerinin verileri JavaScript projesidir.
 ## **Özellikler** ✨
 
 -   Özellik 1: Veriler güncel bir şekilde gelmektedir.
